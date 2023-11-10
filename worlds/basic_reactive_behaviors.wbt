@@ -1,0 +1,132 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/Parquetry.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.5652897929479272 -0.5720773692340255 -0.5942852291611883 4.224514990518837
+  position -0.0969753821929199 -0.1212862811312163 1.7357332263816585
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+  size 3 3
+  tileSize 1 1
+  appearance Parquetry {
+    type "light strip"
+  }
+}
+Solid {
+  translation 0 1.5 0.1
+  children [
+    DEF WALL Shape {
+      appearance PBRAppearance {
+        baseColor 0.880262 0.521965 0.544015
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 3 0.02 0.2
+      }
+    }
+  ]
+  name "wall"
+  boundingObject USE WALL
+}
+Solid {
+  translation 0 -1.51 0.1
+  children [
+    DEF WALL Shape {
+      appearance PBRAppearance {
+        baseColor 0.880262 0.521965 0.544015
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 3 0.02 0.2
+      }
+    }
+  ]
+  name "wall(1)"
+  boundingObject USE WALL
+}
+Solid {
+  translation 1.5 -0.01 0.1
+  rotation 0 0 1 -1.5707953071795862
+  children [
+    DEF WALL Shape {
+      appearance PBRAppearance {
+        baseColor 0.880262 0.521965 0.544015
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 3 0.02 0.2
+      }
+    }
+  ]
+  name "wall(2)"
+  boundingObject USE WALL
+}
+Solid {
+  translation -1.51 -0.010003 0.1
+  rotation 0 0 1 -1.5707953071795862
+  children [
+    DEF WALL Shape {
+      appearance PBRAppearance {
+        baseColor 0.880262 0.521965 0.544015
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 3 0.02 0.2
+      }
+    }
+  ]
+  name "wall(3)"
+  boundingObject USE WALL
+}
+Solid {
+  translation 0.54 0 0.25
+  children [
+    DEF BOX Shape {
+      appearance PBRAppearance {
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.5 0.5 0.5
+      }
+    }
+  ]
+  name "box1"
+  boundingObject USE BOX
+}
+Solid {
+  translation -0.67 0 0.25
+  children [
+    DEF BOX Shape {
+      appearance PBRAppearance {
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.5 0.5 0.5
+      }
+    }
+  ]
+  name "box2"
+  boundingObject USE BOX
+}
+E-puck {
+  translation -0.005788 0.0225413 -0.000157213
+  rotation 0 0 -1 0
+  controller "epic_reactive_behavior"
+}
